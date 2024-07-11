@@ -5,6 +5,7 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -13,15 +14,33 @@ h1 {
 
 .calculatorBody {
   display: flex;
+  flex-direction: column;
   background-color: lightcoral;
   border: 2px solid red;
+  margin-top: 15vh;
+  height: 70vh;
+  width: 40vw;
+}
+
+.screen {
+  flex: 1 1 0;
+  background-color: lightgrey;
+  border: 2px solid black;
+}
+
+.buttons {
+  flex: 1 1 0;
 }
 
 .numberButtons {
   flex: 1 1 0;
   background-color: lightgreen;
   border: 2px solid greenyellow;
-  
+}
+
+.numberButtons div {
+  background-color: chartreuse;
+  border: 2px solid lightseagreen;
 }
 
 .calcButtons {
