@@ -12,6 +12,26 @@ h1 {
 }
 
 .calculatorBody {
+  display: flex;
   background-color: lightcoral;
   border: 2px solid red;
+}
+
+.numberButtons {
+  flex: 1 1 0;
+  background-color: lightgreen;
+  border: 2px solid greenyellow;
+  
+}
+
+.calcButtons {
+  flex: 1 1 0;
+  background-color: lightyellow;
+  border: 2px solid yellow;
+}
+
+.functionButtons {
+  flex: 1 1 0;
+  background-color: lightblue;
+  border: 2px solid blue;
 }
