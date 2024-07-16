@@ -33,9 +33,16 @@ h1 {
 }
 
 .numberButtons {
+  display: flex;
   flex: 1 1 0;
   background-color: lightgreen;
   border: 2px solid greenyellow;
+  flex-wrap: wrap;
+}
+
+.numberButtons div {
+  width: 80px;
+  height: 80px;
 }
 
 .numberButtons div {
