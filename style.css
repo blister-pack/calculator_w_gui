@@ -35,7 +35,7 @@ h1 {
 
 .leftButtons {
   display: flex;
-  flex: 1 1 0;
+  flex: 5 1 0;
   flex-direction: column;
 }
 
