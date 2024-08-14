@@ -29,7 +29,14 @@ h1 {
 }
 
 .buttons {
+  display: flex;
   flex: 1 1 0;
+}
+
+.leftButtons {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
 }
 
 .numberButtons {
@@ -67,4 +74,10 @@ h1 {
   flex: 1 1 0;
   background-color: lightyellow;
   border: 2px solid yellow;
+}
+
+.calcButtons div {
+  width: 80px;
+  height: 80px;
+  border: 2px solid gold;
 }
