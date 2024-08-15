@@ -1,3 +1,12 @@
+const buttons = document.querySelector(".buttons");
+
+buttons.addEventListener("click", () => { logText(); });
+
+function logText() {
+    console.log(this.textContent);
+}
+
+
 function addition(a, b) {
     return a + b;
 }
