@@ -50,9 +50,6 @@ h1 {
 .numberButtons div {
   width: 80px;
   height: 80px;
-}
-
-.numberButtons div {
   background-color: chartreuse;
   border: 2px solid lightseagreen;
 }
@@ -80,11 +77,14 @@ h1 {
   width: 80px;
   height: 80px;
   border: 2px solid gold;
+  flex: 1 1 0;
 }
 
 .buttons .leftButtons .numberButtons div,
 .buttons .leftButtons .functionButtons div,
 .buttons .calcButtons div {
-  /* this makes all the buttons the same size */
-  
+  /* this centers the text of the buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
