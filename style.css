@@ -81,3 +81,10 @@ h1 {
   height: 80px;
   border: 2px solid gold;
 }
+
+.buttons .leftButtons .numberButtons div,
+.buttons .leftButtons .functionButtons div,
+.buttons .calcButtons div {
+  /* this makes all the buttons the same size */
+  
+}
