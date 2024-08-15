@@ -35,7 +35,7 @@ h1 {
 
 .leftButtons {
   display: flex;
-  flex: 5 1 0;
+  flex: 3 1 0;
   flex-direction: column;
 }
 
@@ -63,20 +63,24 @@ h1 {
 }
 
 .functionButtons div {
-  width: 80px;
-  height: 80px;
+  /* width: 80px;
+  height: 80px; */
+  flex: 1 1 100px;
   border: 2px solid blueviolet;
 }
 
 .calcButtons {
+  display: flex;
+  flex-direction: column;
   flex: 1 1 0;
   background-color: lightyellow;
   border: 2px solid yellow;
 }
 
 .calcButtons div {
-  width: 80px;
-  height: 80px;
+  /* width: 80px;
+  height: 80px; */
+  flex: 1 1 100px;
   border: 2px solid gold;
   flex: 1 1 0;
 }
