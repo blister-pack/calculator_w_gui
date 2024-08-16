@@ -1,9 +1,10 @@
 const buttons = document.querySelector(".buttons");
 
-buttons.addEventListener("click", () => { logText(); });
+buttons.addEventListener("click", logText, true);
 
-function logText() {
-    console.log(this.textContent);
+function logText(event) {
+    let target = event.target;
+    console.log(target.textContent);
 }
 
 
