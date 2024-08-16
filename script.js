@@ -1,10 +1,20 @@
 const buttons = document.querySelector(".buttons");
+const screen = document.querySelector(".screen");
+let calcText = "";
 
 buttons.addEventListener("click", logText, true);
+screen.addEventListener("click", showCalculatorText, true);
 
 function logText(event) {
     let target = event.target;
     console.log(target.textContent);
+    calcText += target.textContent;
+    console.log(calcText);
+}
+
+function showCalculatorText(event) {
+    let target = event.target;
+    target.textContent = "Hello World!";
 }
 
 
