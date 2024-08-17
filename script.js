@@ -18,6 +18,11 @@ function buttonHandler(event) {
             // if user clicks AC, screen clears
             clearScreen();
             break;
+        
+        case "+/-":
+            // in this case the user makes the number negative/positive
+            changePositiveNegative();
+            break;
     
         default:
             logText(event);
@@ -40,11 +45,18 @@ function showCalculatorText() {
 function clearScreen() {
     // this function clears all input
     calcText = "";
-    screen.textContent = calcText;
 }
 
 function changePositiveNegative() {
     // this function changes input to negative/positive
+    let screenContent = screen.textContent;
+    if (screenContent[0] === "-") {
+        // if the number is negative it makes it positive
+        calcText = screenContent.slice(1);
+    } else {
+        // if the number is positive it makes it negative
+        calcText = "-" + screenContent;
+    }
 }
 
 
