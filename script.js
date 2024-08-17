@@ -1,3 +1,5 @@
+// make it work, make it right, make it fast
+
 const buttons = document.querySelector(".buttons");
 const screen = document.querySelector(".screen");
 let calcText = "";
@@ -14,7 +16,7 @@ function logText(event) {
 
 function showCalculatorText(event) {
     let target = event.target;
-    target.textContent = "Hello World!";
+    target.textContent = calcText;
 }
 
 
