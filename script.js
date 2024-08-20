@@ -23,6 +23,15 @@ function buttonHandler(event) {
             // in this case the user makes the number negative/positive
             changePositiveNegative();
             break;
+        
+        case "%":
+            // user turns a percentage into a fraction (divides by 100)
+            percentageToFraction();
+            break;
+        
+        case "=":
+            operate();
+            break;
     
         default:
             logText(event);
@@ -59,6 +68,9 @@ function changePositiveNegative() {
     }
 }
 
+function percentageToFraction() {
+    // lol
+}
 
 function addition(a, b) {
     return a + b;
