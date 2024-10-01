@@ -69,7 +69,7 @@ function changePositiveNegative() {
 }
 
 function percentageToFraction() {
-    // lol
+    // function divides number on screen by 100
 }
 
 function addition(a, b) {
