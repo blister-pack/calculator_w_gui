@@ -70,6 +70,9 @@ function changePositiveNegative() {
 
 function percentageToFraction() {
     // function divides number on screen by 100
+    let screenContent = screen.textContent;
+    calcText = screenContent / 100;
+
 }
 
 function addition(a, b) {
