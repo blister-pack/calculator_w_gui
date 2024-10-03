@@ -3,6 +3,9 @@
 const buttons = document.querySelector(".buttons");
 const screen = document.querySelector(".screen");
 let calcText = "";
+let firstArgument;
+let secondArgument;
+let operator;
 
 buttons.addEventListener("click", (event) => {
     buttonHandler(event);
@@ -31,6 +34,11 @@ function buttonHandler(event) {
         
         case "=":
             operate();
+            break;
+        
+        case "+" || "-" || "/" || "*":
+            operator = clickedButton;
+            // TODO: operator shows up on calc screen
             break;
     
         default:
