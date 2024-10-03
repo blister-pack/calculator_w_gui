@@ -19,6 +19,8 @@ function buttonHandler(event) {
     if (["+", "-", "/", "x"].includes(clickedButton)) {
         // CURSE CODE CODE WAR CRIMES AAAAAH
         operator = clickedButton;
+        firstArgument = calcText;
+        calcText = "";
         
     } else {
         switch (clickedButton) {
@@ -38,6 +40,13 @@ function buttonHandler(event) {
                 break;
             
             case "=":
+                // people would only click the = sign after having written
+                // the first and the second argument, since the first is saved
+                // upon selecting the operator, the second can be saved when
+                // attempting to perform a calculation and is saved before the
+                // calculation - then we perform the calculation and the result
+                // is displayed
+                secondArgument = calcText;
                 operate(operator);
                 break;
             
@@ -88,21 +97,26 @@ function operate(typeOfOperation) {
     switch (typeOfOperation) {
         case "+":
             // sum
+            addition(firstArgument, secondArgument);
             break;
         
         case "-":
             // subtraction
+            subtraction(firstArgument, secondArgument);
             break;
         
         case "/":
             // division
+            division(firstArgument, secondArgument);
             break;
         
         case "x":
             // multiplication
+            multiplication(firstArgument, secondArgument);
             break;
     
         default:
+            // display message here that no operation was possible
             break;
     }
 }
