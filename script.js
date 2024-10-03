@@ -16,36 +16,37 @@ function buttonHandler(event) {
     let target = event.target;
     let clickedButton = target.textContent;
 
-    switch (clickedButton) {
-        case "AC":
-            // if user clicks AC, screen clears
-            clearScreen();
-            break;
+    if (["+", "-", "/", "x"].includes(clickedButton)) {
+        // CURSE CODE CODE WAR CRIMES AAAAAH
+        operator = clickedButton;
         
-        case "+/-":
-            // in this case the user makes the number negative/positive
-            changePositiveNegative();
-            break;
+    } else {
+        switch (clickedButton) {
+            case "AC":
+                // if user clicks AC, screen clears
+                clearScreen();
+                break;
+            
+            case "+/-":
+                // in this case the user makes the number negative/positive
+                changePositiveNegative();
+                break;
+            
+            case "%":
+                // user turns a percentage into a fraction (divides by 100)
+                percentageToFraction();
+                break;
+            
+            case "=":
+                operate();
+                break;
+            
+            default:
+                logText(event);
+                break;
+        }
         
-        case "%":
-            // user turns a percentage into a fraction (divides by 100)
-            percentageToFraction();
-            break;
-        
-        case "=":
-            operate();
-            break;
-        
-        case "+" || "-" || "/" || "*":
-            operator = clickedButton;
-            // TODO: operator shows up on calc screen
-            break;
-    
-        default:
-            logText(event);
-            break;
     }
-    
 }
 
 function logText(event) {
