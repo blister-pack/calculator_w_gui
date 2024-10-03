@@ -38,7 +38,7 @@ function buttonHandler(event) {
                 break;
             
             case "=":
-                operate();
+                operate(operator);
                 break;
             
             default:
@@ -82,6 +82,29 @@ function percentageToFraction() {
     let screenContent = screen.textContent;
     calcText = screenContent / 100;
 
+}
+
+function operate(typeOfOperation) {
+    switch (typeOfOperation) {
+        case "+":
+            // sum
+            break;
+        
+        case "-":
+            // subtraction
+            break;
+        
+        case "/":
+            // division
+            break;
+        
+        case "x":
+            // multiplication
+            break;
+    
+        default:
+            break;
+    }
 }
 
 function addition(a, b) {
