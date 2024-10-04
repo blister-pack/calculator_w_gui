@@ -47,7 +47,7 @@ function buttonHandler(event) {
                 // calculation - then we perform the calculation and the result
                 // is displayed
                 secondArgument = calcText;
-                operate(operator);
+                calcText = operate(operator);
                 break;
             
             default:
@@ -93,26 +93,31 @@ function percentageToFraction() {
 
 }
 
-function operate(typeOfOperation) {
+function operate(typeOfOperation, a = firstArgument, b = secondArgument) {
+    // converting the strings into numbers
+    a = +a;
+    b = +b;
+
+
     switch (typeOfOperation) {
         case "+":
             // sum
-            addition(firstArgument, secondArgument);
+            return addition(a, b);
             break;
         
         case "-":
             // subtraction
-            subtraction(firstArgument, secondArgument);
+            return subtraction(a, b);
             break;
         
         case "/":
             // division
-            division(firstArgument, secondArgument);
+            return division(a, b);
             break;
         
         case "x":
             // multiplication
-            multiplication(firstArgument, secondArgument);
+            return multiplication(a, b);
             break;
     
         default:
