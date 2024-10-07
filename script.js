@@ -26,7 +26,7 @@ function buttonHandler(event) {
         if (isNaN(argList[0]) === false) {
             // no number in list, we can save number
             argList.push(calcText);
-            argList.push(operator)
+            argList.push(operator);
         } else {
             // there is already a number in the list,
             // therefore we add the new operator and delete the other
