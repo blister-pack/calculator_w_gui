@@ -6,6 +6,8 @@ let calcText = "";
 let firstArgument;
 let secondArgument;
 let operator;
+let argList = [];
+let operatorList = ["+", "-", "/", "x"];
 
 buttons.addEventListener("click", (event) => {
     buttonHandler(event);
@@ -15,13 +17,16 @@ buttons.addEventListener("click", (event) => {
 function buttonHandler(event) {
     let target = event.target;
     let clickedButton = target.textContent;
-
-    if (["+", "-", "/", "x"].includes(clickedButton)) {
-        // CURSE CODE CODE WAR CRIMES AAAAAH
+    
+    // checking if user clicked on an operator
+    if (operatorList.includes(clickedButton)) {
+        // CURSED CODE CODE WAR CRIMES AAAAAH
+        argList.push(calcText);
         operator = clickedButton;
+        argList.push(operator);
         firstArgument = calcText;
         calcText = "";
-        
+    
     } else {
         switch (clickedButton) {
             case "AC":
@@ -48,9 +53,12 @@ function buttonHandler(event) {
                 // is displayed
                 secondArgument = calcText;
                 calcText = operate(operator);
+                firstArgument = secondArgument;
+                secondArgument = "";
                 break;
             
             default:
+
                 logText(event);
                 break;
         }
@@ -90,14 +98,12 @@ function percentageToFraction() {
     // function divides number on screen by 100
     let screenContent = screen.textContent;
     calcText = screenContent / 100;
-
 }
 
 function operate(typeOfOperation, a = firstArgument, b = secondArgument) {
     // converting the strings into numbers
     a = +a;
     b = +b;
-
 
     switch (typeOfOperation) {
         case "+":
