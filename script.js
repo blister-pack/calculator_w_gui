@@ -20,13 +20,20 @@ function buttonHandler(event) {
     
     // checking if user clicked on an operator
     if (operatorList.includes(clickedButton)) {
-        // CURSED CODE CODE WAR CRIMES AAAAAH
-        argList.push(calcText);
         operator = clickedButton;
-        argList.push(operator);
-        firstArgument = calcText;
-        calcText = "";
-    
+
+        // check if number already in list
+        if (isNaN(argList[0]) === false) {
+            // no number in list, we can save number
+            argList.push(calcText);
+            argList.push(operator)
+        } else {
+            // there is already a number in the list,
+            // therefore we add the new operator and delete the other
+            argList.push(operator);
+            argList.splice(argList.length - 2, argList.length - 2);
+        }
+
     } else {
         switch (clickedButton) {
             case "AC":
