@@ -61,10 +61,13 @@ function buttonHandler(event) {
                 // attempting to perform a calculation and is saved before the
                 // calculation - then we perform the calculation and the result
                 // is displayed
-                secondArgument = calcText;
-                calcText = operate(operator);
-                firstArgument = secondArgument;
-                secondArgument = "";
+
+                argList.push(calcText);  // adds 2nd argument to list
+                calcText = operate(argList[1]);  // uses operator in list to choose operation
+                argList.push(calcText);
+                argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
+
+
                 break;
             
             default:
@@ -114,7 +117,7 @@ function percentageToFraction() {
     calcText = screenContent / 100;
 }
 
-function operate(typeOfOperation, a = firstArgument, b = secondArgument) {
+function operate(typeOfOperation, a = argList[0], b = argList[2]) {
     // converting the strings into numbers
     a = +a;
     b = +b;
