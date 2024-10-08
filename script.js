@@ -3,12 +3,9 @@
 const buttons = document.querySelector(".buttons");
 const screen = document.querySelector(".screen");
 let calcText = "";
-let firstArgument;
-let secondArgument;
 let operator;
 let argList = [];
 let operatorList = ["+", "-", "/", "x"];
-let operatorUp = false;
 
 buttons.addEventListener("click", (event) => {
     buttonHandler(event);
@@ -28,13 +25,11 @@ function buttonHandler(event) {
             // no number in list, we can save number
             argList.push(calcText);
             argList.push(operator);
-            operatorUp = true;
         } else {
             // there is already a number in the list,
             // therefore we add the new operator and delete the other
             argList.push(operator);
             argList.splice(argList.length - 2, argList.length - 2);
-            operatorUp = true;
         }
 
     } else {
@@ -71,9 +66,11 @@ function buttonHandler(event) {
                 break;
             
             default:
-                if (operatorUp === true) {
-                    clearScreen();
-                    operatorUp = false;
+                if (operatorList.includes(argList[argList.length-1])) {
+                    // if we have an operator in the list and start
+                    // writing a number, screen should clear first
+                    // that way we write a NEW argument
+                    screen.textContent = "";
                 }
 
                 logText(event);
