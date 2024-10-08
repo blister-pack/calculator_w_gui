@@ -8,6 +8,7 @@ let secondArgument;
 let operator;
 let argList = [];
 let operatorList = ["+", "-", "/", "x"];
+let operatorUp = false;
 
 buttons.addEventListener("click", (event) => {
     buttonHandler(event);
@@ -27,11 +28,13 @@ function buttonHandler(event) {
             // no number in list, we can save number
             argList.push(calcText);
             argList.push(operator);
+            operatorUp = true;
         } else {
             // there is already a number in the list,
             // therefore we add the new operator and delete the other
             argList.push(operator);
             argList.splice(argList.length - 2, argList.length - 2);
+            operatorUp = true;
         }
 
     } else {
@@ -65,6 +68,10 @@ function buttonHandler(event) {
                 break;
             
             default:
+                if (operatorUp === true) {
+                    clearScreen();
+                    operatorUp = false;
+                }
 
                 logText(event);
                 break;
