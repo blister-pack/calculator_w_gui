@@ -64,7 +64,7 @@ function buttonHandler(event) {
 
                 argList.push(calcText);  // adds 2nd argument to list
                 calcText = operate(argList[1]);  // uses operator in list to choose operation
-                argList.push(calcText);
+                argList.push(calcText);  // result goes in the argList
                 argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
 
 
@@ -97,6 +97,7 @@ function showCalculatorText() {
 function clearScreen() {
     // this function clears all input
     calcText = "";
+    argList = [];
 }
 
 function changePositiveNegative() {
