@@ -13,7 +13,7 @@ buttons.addEventListener("click", (event) => {
 } , true);
 
 function buttonHandler(event) {
-    debugger
+    // debugger
     let target = event.target;
     let clickedButton = target.textContent;
     
@@ -25,6 +25,16 @@ function buttonHandler(event) {
         if (isNaN(argList[0]) === true) {
             // no number in list, we can save number and operator
             argList.push(calcText);
+            argList.push(operator);
+        } else if ((argList.length === 2) && (calcText != "")) {
+            // we already have a number and operator and
+            // another number written on the screen,
+            // selecting another operator should first execute the first calculation
+            // and make the result become the first argument and save the operator
+            argList.push(calcText);  // adds 2nd argument to list
+            calcText = operate(argList[1]);  // uses operator in list to choose operation
+            argList.push(calcText);  // result goes in the argList
+            argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
             argList.push(operator);
         } else {
             // there is already a number in the list,
