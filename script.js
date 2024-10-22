@@ -6,6 +6,7 @@ let calcText = "";
 let operator;
 let argList = [];
 let operatorList = ["+", "-", "/", "x"];
+let writing2ndArg = false;
 
 buttons.addEventListener("click", (event) => {
     buttonHandler(event);
@@ -31,6 +32,7 @@ function buttonHandler(event) {
             // another number written on the screen,
             // selecting another operator should first execute the first calculation
             // and make the result become the first argument and save the operator
+            writing2ndArg = false;
             argList.push(calcText);  // adds 2nd argument to list
             calcText = operate(argList[1]);  // uses operator in list to choose operation
             argList.push(calcText);  // result goes in the argList
@@ -61,6 +63,7 @@ function buttonHandler(event) {
                 break;
             
             case "=":
+                writing2ndArg = false;
                 argList.push(calcText);  // adds 2nd argument to list
                 calcText = operate(argList[1]);  // uses operator in list to choose operation
                 argList.push(calcText);  // result goes in the argList
@@ -68,11 +71,12 @@ function buttonHandler(event) {
                 break;
             
             default:
-                if (operatorList.includes(argList[argList.length-1])) {
+                if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length-1]))) {
                     // if we have an operator in the list and start
                     // writing a number, screen should clear first
                     // that way we write a NEW argument
                     calcText = "";
+                    writing2ndArg = true;
                 }
 
                 logText(event);
