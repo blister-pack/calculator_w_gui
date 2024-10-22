@@ -23,7 +23,7 @@ function buttonHandler(event) {
 
         // check if number already in list
         if (isNaN(argList[0]) === true) {
-            // no number in list, we can save number and operator
+            // no number in list, we can save first argument and operator
             argList.push(calcText);
             argList.push(operator);
         } else if ((argList.length === 2) && (calcText != "")) {
