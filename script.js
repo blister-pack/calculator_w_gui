@@ -27,6 +27,7 @@ function buttonHandler(event) {
             // no number in list, we can save first argument and operator
             argList.push(calcText);
             argList.push(operator);
+
         } else if ((argList.length === 2) && (calcText != "")) {
             // we already have a number and operator and
             // another number written on the screen,
@@ -38,6 +39,7 @@ function buttonHandler(event) {
             argList.push(calcText);  // result goes in the argList
             argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
             argList.push(operator);
+
         } else {
             // there is already a number in the list,
             // therefore we add the new operator and delete the other
@@ -70,16 +72,25 @@ function buttonHandler(event) {
                 argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
                 break;
             
-            default:
-                if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length-1]))) {
-                    // if we have an operator in the list and start
-                    // writing a number, screen should clear first
-                    // that way we write a NEW argument
-                    calcText = "";
-                    writing2ndArg = true;
+            case ".":
+                // each number should only have one .
+                if (!calcText.includes(".")) {
+                    logText(event)
                 }
 
-                logText(event);
+                break;
+            
+            default:
+                if (calcText.length < 9) {
+                    if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length-1]))) {
+                        // if we have an operator in the list and start
+                        // writing a number, screen should clear first
+                        // that way we write a NEW argument
+                        calcText = "";
+                        writing2ndArg = true;
+                    }   
+                    logText(event);
+                }
                 break;
         }
         
@@ -166,5 +177,10 @@ function multiplication(a, b) {
 }
 
 function division(a, b) {
-    return a / b;
+    if (b === 0) {
+        return "get outta here"
+    }
+    else {
+        return a / b;
+    }
 }
