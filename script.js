@@ -34,11 +34,15 @@ function buttonHandler(event) {
             // selecting another operator should first execute the first calculation
             // and make the result become the first argument and save the operator
             writing2ndArg = false;
+            console.log(argList);
             argList.push(calcText);  // adds 2nd argument to list
-            calcText = operate(argList[1]);  // uses operator in list to choose operation
+            calcText = operate(argList[1]).toString();  // uses operator in list to choose operation
             argList.push(calcText);  // result goes in the argList
             argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
             argList.push(operator);
+            console.log(argList);
+            console.log(calcText);
+
 
         } else {
             // there is already a number in the list,
@@ -67,7 +71,9 @@ function buttonHandler(event) {
             case "=":
                 writing2ndArg = false;
                 argList.push(calcText);  // adds 2nd argument to list
-                calcText = operate(argList[1]);  // uses operator in list to choose operation
+                console.log(argList);
+                calcText = operate(argList[1]).toString();  // uses operator in list to choose operation, returned value must be a string
+                console.log(calcText);
                 argList.push(calcText);  // result goes in the argList
                 argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
                 break;
@@ -81,6 +87,7 @@ function buttonHandler(event) {
                 break;
             
             default:
+                
                 if (calcText.length < 9) {
                     if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length-1]))) {
                         // if we have an operator in the list and start
