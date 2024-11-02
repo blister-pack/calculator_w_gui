@@ -171,6 +171,10 @@ function operate(typeOfOperation, a = argList[0], b = argList[2]) {
     }
 }
 
+// OPERATIONS
+// all the functions for the normal calculator operations are under
+// this line
+
 function addition(a, b) {
     return a + b;
 }
