@@ -172,7 +172,9 @@ function operate(typeOfOperation, a = argList[0], b = argList[2]) {
 
 function limitResultLength(result) {
     // rounds results that are too long (9 digit limit)
-    
+    if (result.length > 9) {
+        
+    }
 }
 
 // OPERATIONS
