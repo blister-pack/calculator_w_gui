@@ -81,9 +81,8 @@ function buttonHandler(event) {
             case ".":
                 // each number should only have one .
                 if (!calcText.includes(".")) {
-                    logText(event)
+                    logText(event);
                 }
-
                 break;
             
             default:
@@ -171,6 +170,11 @@ function operate(typeOfOperation, a = argList[0], b = argList[2]) {
     }
 }
 
+function limitResultLength(result) {
+    // rounds results that are too long (9 digit limit)
+    
+}
+
 // OPERATIONS
 // all the functions for the normal calculator operations are under
 // this line
@@ -189,6 +193,7 @@ function multiplication(a, b) {
 
 function division(a, b) {
     if (b === 0) {
+        // divison by 0 shouldn't be possible
         return "get outta here"
     }
     else {
