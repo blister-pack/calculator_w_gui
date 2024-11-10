@@ -73,6 +73,7 @@ function buttonHandler(event) {
                 argList.push(calcText);  // adds 2nd argument to list
                 console.log(argList);
                 calcText = operate(argList[1]).toString();  // uses operator in list to choose operation, returned value must be a string
+                calcText = limitResultLength(calcText);
                 console.log(calcText);
                 argList.push(calcText);  // result goes in the argList
                 argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
@@ -172,8 +173,12 @@ function operate(typeOfOperation, a = argList[0], b = argList[2]) {
 
 function limitResultLength(result) {
     // rounds results that are too long (9 digit limit)
-    if (result.length > 9) {
-        return Math.round(result * (10 ** 9)) / (10 ** 9);
+    if (result.toString().length > 9) {
+        // the rounding only works with decimal numbers
+        let wholeNumbers = (result.toString().split("."))[0].length
+        // wholeNumbers is the number of digits in the whole number part
+        return Math.round(result * 10**(8 - wholeNumbers)) / 10**(8 - wholeNumbers);
+        // result with a total of 9 digits
     } else {
         return result;
     }
