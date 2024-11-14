@@ -29,8 +29,13 @@ function buttonHandler(event) {
             // no number in list, we can save first argument and operator
             argList.push(calcText);
             argList.push(operator);
+            selectingOperator = true;
+            
+        } else if (selectingOperator === true) {
+            argList.splice(1, 1);
+            argList.push(operator);
 
-        } else if ((argList.length === 2) && (calcText != "")) {
+        } else if ((argList.length === 2) && (calcText != "") && (selectingOperator === false)) {
             // we already have a number and operator and
             // another number written on the screen,
             // selecting another operator should first execute the first calculation
@@ -44,6 +49,7 @@ function buttonHandler(event) {
             argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
             argList.push(operator);
             isResult = true;
+            selectingOperator = true;
             console.log(argList);
             console.log(calcText);
 
@@ -93,7 +99,7 @@ function buttonHandler(event) {
                 break;
             
             default:
-                
+                selectingOperator = false;
                 if (calcText.length < 9) {
                     if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length - 1]))) {
                         // if we have an operator in the list and start
