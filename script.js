@@ -105,16 +105,9 @@ function buttonHandler(event) {
     }
 }
 
-function logText(event) {
-    let target = event.target;
-    console.log(target.textContent);
-    calcText += target.textContent;
-    console.log(calcText);
-}
 
-function showCalculatorText() {
-    screen.textContent = calcText;
-}
+
+// BUTTON FUNCTIONS
 
 function clearScreen() {
     // this function clears all input
@@ -171,6 +164,9 @@ function operate(typeOfOperation, a = argList[0], b = argList[2]) {
             break;
     }
 }
+// ----------------------------------------------------
+
+// FUNCTIONAL FUNCTIONS
 
 function limitResultLength(result) {
     // rounds results that are too long (9 digit limit)
@@ -188,6 +184,19 @@ function limitResultLength(result) {
         return result;
     }
 }
+
+function logText(event) {
+    let target = event.target;
+    console.log(target.textContent);
+    calcText += target.textContent;
+    console.log(calcText);
+}
+
+function showCalculatorText() {
+    screen.textContent = calcText;
+}
+
+// --------------------------------------------
 
 
 // OPERATIONS
@@ -215,3 +224,4 @@ function division(a, b) {
         return a / b;
     }
 }
+// --------------------------------------------
