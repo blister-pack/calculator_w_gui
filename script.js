@@ -174,15 +174,20 @@ function operate(typeOfOperation, a = argList[0], b = argList[2]) {
 function limitResultLength(result) {
     // rounds results that are too long (9 digit limit)
     if (result.toString().length > 9) {
-        // the rounding only works with decimal numbers
-        let wholeNumbers = (result.toString().split("."))[0].length
-        // wholeNumbers is the number of digits in the whole number part
-        return Math.round(result * 10**(8 - wholeNumbers)) / 10**(8 - wholeNumbers);
-        // result with a total of 9 digits
+        if ((result.toString()).includes(".")) {
+            // the rounding only works with decimal numbers
+            let wholeNumbers = (result.toString().split("."))[0].length;
+            // wholeNumbers is the number of digits in the whole number part
+            return (Math.round(result * 10**(8 - wholeNumbers)) / 10**(8 - wholeNumbers)).toString();
+            // result with a total of 9 digits
+        } else {
+            return result.toString().slice(0, 9);
+        }
     } else {
         return result;
     }
 }
+
 
 // OPERATIONS
 // all the functions for the normal calculator operations are under
