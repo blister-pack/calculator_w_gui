@@ -7,6 +7,7 @@ let operator;
 let argList = [];
 let operatorList = ["+", "-", "/", "x"];
 let writing2ndArg = false;
+let isResult = false;
 
 buttons.addEventListener("click", (event) => {
     buttonHandler(event);
@@ -41,6 +42,7 @@ function buttonHandler(event) {
             argList.push(calcText);  // result goes in the argList
             argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
             argList.push(operator);
+            isResult = true;
             console.log(argList);
             console.log(calcText);
 
@@ -78,6 +80,7 @@ function buttonHandler(event) {
                 console.log(calcText);
                 argList.push(calcText);  // result goes in the argList
                 argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
+                isResult = true;
                 break;
             
             case ".":
@@ -90,15 +93,27 @@ function buttonHandler(event) {
             default:
                 
                 if (calcText.length < 9) {
-                    if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length-1]))) {
+                    if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length - 1]))) {
                         // if we have an operator in the list and start
                         // writing a number, screen should clear first
                         // that way we write a NEW argument
                         calcText = "";
                         writing2ndArg = true;
-                    }   
-                    logText(event);
+                    }
+                    
                 }
+                
+                if (isResult === true) {
+                    if (operator == null) {
+                        calcText = "";
+                        argList = [];
+                        isResult = false;
+                    } else {
+                        isResult = false;
+                    }
+                }
+                logText(event);
+                
                 break;
         }
         
@@ -112,6 +127,7 @@ function buttonHandler(event) {
 function clearScreen() {
     // this function clears all input
     calcText = "";
+    operator = null;
     argList = [];
 }
 
