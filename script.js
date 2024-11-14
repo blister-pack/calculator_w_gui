@@ -37,6 +37,7 @@ function buttonHandler(event) {
             console.log(argList);
             argList.push(calcText);  // adds 2nd argument to list
             calcText = operate(argList[1]).toString();  // uses operator in list to choose operation
+            calcText = limitResultLength(calcText);
             argList.push(calcText);  // result goes in the argList
             argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
             argList.push(operator);
@@ -208,7 +209,7 @@ function multiplication(a, b) {
 function division(a, b) {
     if (b === 0) {
         // divison by 0 shouldn't be possible
-        return "get outta here"
+        return "no >:("
     }
     else {
         return a / b;
