@@ -8,6 +8,7 @@ let argList = [];
 let operatorList = ["+", "-", "/", "x"];
 let writing2ndArg = false;
 let isResult = false;
+let selectingOperator = false;
 
 buttons.addEventListener("click", (event) => {
     buttonHandler(event);
@@ -80,6 +81,7 @@ function buttonHandler(event) {
                 console.log(calcText);
                 argList.push(calcText);  // result goes in the argList
                 argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
+                operator = null;
                 isResult = true;
                 break;
             
