@@ -91,12 +91,12 @@ function buttonHandler(event) {
                 isResult = true;
                 break;
             
-            case ".":
-                // each number should only have one .
-                if (!calcText.includes(".")) {
-                    logText(event);
-                }
-                break;
+            // case ".":
+            //     // each number should only have one .
+            //     if (!calcText.includes(".")) {
+            //         logText(event);
+            //     }
+            //     break;
             
             default:
                 selectingOperator = false;
@@ -120,6 +120,9 @@ function buttonHandler(event) {
                         calcText = "";
                         writing2ndArg = true;
                     }
+                    // . button should work like number button
+                    // except it should only be present once per argument
+                    if (!calcText.includes("."))
                     logText(event);
                 }
                 
