@@ -79,24 +79,19 @@ function buttonHandler(event) {
                 break;
             
             case "=":
-                writing2ndArg = false;
-                argList.push(calcText);  // adds 2nd argument to list
-                console.log(argList);
-                calcText = operate(argList[1]).toString();  // uses operator in list to choose operation, returned value must be a string
-                calcText = limitResultLength(calcText);
-                console.log(calcText);
-                argList.push(calcText);  // result goes in the argList
-                argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
-                operator = null;
-                isResult = true;
+                if ((argList.length === 2) && (calcText !== "")) {
+                    writing2ndArg = false;
+                    argList.push(calcText);  // adds 2nd argument to list
+                    console.log(argList);
+                    calcText = operate(argList[1]).toString();  // uses operator in list to choose operation, returned value must be a string
+                    calcText = limitResultLength(calcText);
+                    console.log(calcText);
+                    argList.push(calcText);  // result goes in the argList
+                    argList.splice(0, argList.length - 1); // removes previous inputs and makes the result 1st argument
+                    operator = null;
+                    isResult = true;
+                }
                 break;
-            
-            // case ".":
-            //     // each number should only have one .
-            //     if (!calcText.includes(".")) {
-            //         logText(event);
-            //     }
-            //     break;
             
             default:
                 selectingOperator = false;
