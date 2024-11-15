@@ -100,18 +100,9 @@ function buttonHandler(event) {
             
             default:
                 selectingOperator = false;
-                if (calcText.length < 9) {
-                    if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length - 1]))) {
-                        // if we have an operator in the list and start
-                        // writing a number, screen should clear first
-                        // that way we write a NEW argument
-                        calcText = "";
-                        writing2ndArg = true;
-                    }
-                    
-                }
-                
                 if (isResult === true) {
+                    // we just got a result, so if we start typing the result is
+                    // deleted so we can write a new argument
                     if (operator == null) {
                         calcText = "";
                         argList = [];
@@ -120,7 +111,18 @@ function buttonHandler(event) {
                         isResult = false;
                     }
                 }
-                logText(event);
+
+                if (calcText.length <= 9) {
+                    if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length - 1]))) {
+                        // if we have an operator in the list and start
+                        // writing a number, screen should clear first
+                        // that way we write a NEW argument
+                        calcText = "";
+                        writing2ndArg = true;
+                    }
+                    logText(event);
+                }
+                
                 
                 break;
         }
