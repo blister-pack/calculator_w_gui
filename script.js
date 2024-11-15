@@ -122,11 +122,13 @@ function buttonHandler(event) {
                     }
                     // . button should work like number button
                     // except it should only be present once per argument
-                    if (!calcText.includes("."))
+                    if (clickedButton === ".") {
+                        if (calcText.includes(".")) {
+                            break;
+                        }
+                    }
                     logText(event);
                 }
-                
-                
                 break;
         }
         
