@@ -24,6 +24,11 @@ function buttonHandler(event) {
     if (operatorList.includes(clickedButton)) {
         operator = clickedButton;
 
+        // OPERATOR HIGHLIGHT (GUI)
+        operator.classList.remove("operator-selected");
+        operator.classList.add("operator-selected");
+        // --------------------------------
+
         // check if number already in list
         if (isNaN(argList[0]) === true) {
             // no number in list, we can save first argument and operator

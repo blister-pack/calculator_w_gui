@@ -97,3 +97,9 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
+.operator-selected {
+  background-color: darkorange;
+  border-color: black;
+  border: 2px solid;
+}
