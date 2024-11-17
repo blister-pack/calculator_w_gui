@@ -9,6 +9,7 @@ let operatorList = ["+", "-", "/", "x"];
 let writing2ndArg = false;
 let isResult = false;
 let selectingOperator = false;
+let lastTarget;
 
 buttons.addEventListener("click", (event) => {
     buttonHandler(event);
@@ -23,10 +24,13 @@ function buttonHandler(event) {
     // checking if user clicked on an operator
     if (operatorList.includes(clickedButton)) {
         operator = clickedButton;
-
         // OPERATOR HIGHLIGHT (GUI)
-        operator.classList.remove("operator-selected");
-        operator.classList.add("operator-selected");
+
+        if (lastTarget) {
+            lastTarget.classList.remove("operator-selected")
+        }
+        target.classList.add("operator-selected");
+        lastTarget = target;
         // --------------------------------
 
         // check if number already in list
