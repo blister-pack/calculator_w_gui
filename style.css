@@ -54,11 +54,11 @@ h1 {
 .numberButtons div {
   /* width: 80px;
   height: 80px; */
-  flex: 1 1 100px;
+  flex: 1 1 25%;
   background-color: chartreuse;
   border: 2px solid lightseagreen;
   border-radius: 90px;
-
+  margin: 3px 10px;
 }
 
 .functionButtons {
@@ -66,16 +66,15 @@ h1 {
   flex: 1 1 0;
   background-color: lightblue;
   border: 2px solid blue;
-  
 }
 
 .functionButtons div {
   /* width: 80px;
   height: 80px; */
-  flex: 1 1 100px;
+  flex: 1 1 25%;
   border: 2px solid blueviolet;
   border-radius: 90px;
-
+  margin: 3px 10px;
 }
 
 .calcButtons {
@@ -89,10 +88,11 @@ h1 {
 .calcButtons div {
   /* width: 80px;
   height: 80px; */
-  flex: 1 1 100px;
+  flex: 1 1 25%;
   border: 2px solid gold;
   flex: 1 1 0;
   border-radius: 90px;
+  margin: 3px 10px;
 }
 
 .buttons .leftButtons .numberButtons div,
@@ -106,7 +106,7 @@ h1 {
 
 /* IDs */
 #button0 {
-  flex: 1 1 223px;
+  flex: 1 1 60%;
 }
 
 /* These classes are for animations or to be toggled */
