@@ -23,14 +23,14 @@ h1 {
   margin-top: 15vh;
   height: 700px;
   width: 500px;
-  border: 7px solid navy;
+  border: 7px solid black;
 }
 
 .screen {
   display: flex;
   flex: 1 1 0;
   background-color: lightgrey;
-  border: 2px solid black;
+  border-bottom: 3px solid black;
   align-items: center;
   justify-content: end;
   font-size: 100px;
@@ -121,6 +121,5 @@ h1 {
 /* These classes are for animations or to be toggled */
 .operator-selected {
   background-color: darkorange;
-  border-color: black;
-  border: 2px solid;
+  border: 2px solid green;
 }
