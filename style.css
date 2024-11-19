@@ -106,13 +106,7 @@ h1 {
 }
 
 .calcButtons div.operator-selected {
-  flex: 1 1 25%;
-  background-color: rgb(243, 184, 113);
-  color: white;
-  border: 2px solid green;
-  flex: 1 1 0;
-  border-radius: 90px;
-  margin: 3px 10px;
+  background-color: rgb(253, 173, 74);
 }
 /* ------------- */
 
