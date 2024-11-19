@@ -84,6 +84,7 @@ h1 {
   margin: 3px 10px;
 }
 
+/* Operator button stuff */
 .calcButtons {
   display: flex;
   flex-direction: column;
@@ -104,6 +105,16 @@ h1 {
   margin: 3px 10px;
 }
 
+.operator-selected {
+  flex: 1 1 25%;
+  background-color: rgb(243, 184, 113);
+  color: white;
+  flex: 1 1 0;
+  border-radius: 90px;
+  margin: 3px 10px;
+}
+/* ------------- */
+
 .buttons .leftButtons .numberButtons div,
 .buttons .leftButtons .functionButtons div,
 .buttons .calcButtons div {
@@ -118,8 +129,4 @@ h1 {
   flex: 1 1 60%;
 }
 
-/* These classes are for animations or to be toggled */
-.operator-selected {
-  background-color: darkorange;
-  border: 2px solid green;
-}
+
