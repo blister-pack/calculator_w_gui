@@ -113,6 +113,7 @@ function buttonHandler(event) {
                         argList = [];
                         isResult = false;
                     } else {
+                        calcText = "";
                         isResult = false;
                     }
                 }

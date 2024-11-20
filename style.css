@@ -60,6 +60,7 @@ h1 {
 .numberButtons div {
   /* width: 80px;
   height: 80px; */
+  user-select: none;
   flex: 1 1 25%;
   background-color: rgb(66, 61, 61);
   color: white;
@@ -83,6 +84,7 @@ h1 {
 .functionButtons div {
   /* width: 80px;
   height: 80px; */
+  user-select: none;
   flex: 1 1 25%;
   /* border: 2px solid blueviolet; */
   background-color: lightgray;
@@ -104,8 +106,7 @@ h1 {
 }
 
 .calcButtons div {
-  /* width: 80px;
-  height: 80px; */
+  user-select: none;
   flex: 1 1 25%;
   /* border: 2px solid gold; */
   background-color: rgb(255, 170, 11);
