@@ -68,6 +68,10 @@ h1 {
   margin: 3px 10px;
 }
 
+.numberButtons div:active {
+  background-color: rgb(158, 158, 158);
+}
+
 /* Function button stuff */
 .functionButtons {
   display: flex;
@@ -84,6 +88,10 @@ h1 {
   background-color: lightgray;
   border-radius: 90px;
   margin: 3px 10px;
+}
+
+.functionButtons div:active {
+  background-color: rgb(158, 158, 158);
 }
 
 /* Operator button stuff */
@@ -109,6 +117,10 @@ h1 {
 
 .calcButtons div.operator-selected {
   background-color: rgb(255, 186, 101);
+}
+
+#buttonEqual:active {
+  background-color: rgb(158, 158, 158);
 }
 /* ------------- */
 
