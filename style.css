@@ -48,6 +48,7 @@ h1 {
   flex-direction: column;
 }
 
+/* Number button stuff */
 .numberButtons {
   display: flex;
   flex: 4 1 0;
@@ -67,6 +68,7 @@ h1 {
   margin: 3px 10px;
 }
 
+/* Function button stuff */
 .functionButtons {
   display: flex;
   flex: 1 1 0;
