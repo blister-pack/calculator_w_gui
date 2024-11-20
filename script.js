@@ -27,7 +27,7 @@ function buttonHandler(event) {
         // OPERATOR HIGHLIGHT (GUI)
 
         if (lastTarget) {
-            lastTarget.classList.remove("operator-selected")
+            lastTarget.classList.remove("operator-selected");
         }
         target.classList.add("operator-selected");
         lastTarget = target;
@@ -89,6 +89,7 @@ function buttonHandler(event) {
             
             case "=":
                 if ((argList.length === 2) && (calcText !== "")) {
+                    lastTarget.classList.remove("operator-selected");
                     writing2ndArg = false;
                     argList.push(calcText);  // adds 2nd argument to list
                     console.log(argList);
@@ -116,7 +117,7 @@ function buttonHandler(event) {
                     }
                 }
 
-                if (calcText.length <= 9) {
+                if (calcText.length < 8) {
                     if ((writing2ndArg === false) && (operatorList.includes(argList[argList.length - 1]))) {
                         // if we have an operator in the list and start
                         // writing a number, screen should clear first
@@ -205,15 +206,15 @@ function operate(typeOfOperation, a = argList[0], b = argList[2]) {
 
 function limitResultLength(result) {
     // rounds results that are too long (9 digit limit)
-    if (result.toString().length > 9) {
+    if (result.toString().length > 8) {
         if ((result.toString()).includes(".")) {
             // the rounding only works with decimal numbers
             let wholeNumbers = (result.toString().split("."))[0].length;
             // wholeNumbers is the number of digits in the whole number part
-            return (Math.round(result * 10**(8 - wholeNumbers)) / 10**(8 - wholeNumbers)).toString();
+            return (Math.round(result * 10**(7 - wholeNumbers)) / 10**(7 - wholeNumbers)).toString();
             // result with a total of 9 digits
         } else {
-            return result.toString().slice(0, 9);
+            return result.toString().slice(0, 8);
         }
     } else {
         return result;
